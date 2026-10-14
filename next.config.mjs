@@ -5,7 +5,7 @@ const isStaticMode = process.env.BUILD_MODE === 'static';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Static pages always get included in all build types
-  pageExtensions: ["static.tsx", "static.ts", "static.jsx", "static.js"]
+  pageExtensions: ["static.tsx", "static.ts", "static.jsx", "static.js"],
 };
 
 if (isStaticMode) {
