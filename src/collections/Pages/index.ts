@@ -2,20 +2,20 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock/config'
+// import { Archive } from '../../blocks/ArchiveBlock/config'
 import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
-import { FormBlock } from '../../blocks/Form/config'
+// import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
-import { WorkBlock } from '../../blocks/WorkBlock/config'
-import { ClientListBlock } from '../../blocks/ClientListBlock/config'
-import { LatestNewsBlock } from '../../blocks/LatestNewsBlock/config'
-import { AboutBlock } from '../../blocks/AboutBlock/config'
-import { CapabilitiesBlock } from '../../blocks/CapabilitiesBlock/config'
-import { NewsBlock } from '../../blocks/NewsBlock/config'
-import { ContactBlock } from '../../blocks/ContactBlock/config'
+// import { WorkBlock } from '../../blocks/WorkBlock/config'
+// import { ClientListBlock } from '../../blocks/ClientListBlock/config'
+// import { LatestNewsBlock } from '../../blocks/LatestNewsBlock/config'
+// import { AboutBlock } from '../../blocks/AboutBlock/config'
+// import { CapabilitiesBlock } from '../../blocks/CapabilitiesBlock/config'
+// import { NewsBlock } from '../../blocks/NewsBlock/config'
+// import { ContactBlock } from '../../blocks/ContactBlock/config'
 import { VimeoBlock } from '../../blocks/VimeoBlock/config'
-import { PayloadFormSimpleBlock } from '../../blocks/PayloadFormSimple/config'
+// import { PayloadFormSimpleBlock } from '../../blocks/PayloadFormSimple/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -85,17 +85,17 @@ export const Pages: CollectionConfig<'pages'> = {
                 CallToAction,
                 Content,
                 MediaBlock,
-                Archive,
-                FormBlock,
-                WorkBlock,
-                ClientListBlock,
-                LatestNewsBlock,
-                AboutBlock,
-                CapabilitiesBlock,
-                NewsBlock,
-                ContactBlock,
+                // Archive,
+                // FormBlock,
+                // WorkBlock,
+                // ClientListBlock,
+                // LatestNewsBlock,
+                // AboutBlock,
+                // CapabilitiesBlock,
+                // NewsBlock,
+                // ContactBlock,
                 VimeoBlock,
-                PayloadFormSimpleBlock,
+                // PayloadFormSimpleBlock,
               ],
               required: true,
               admin: {
