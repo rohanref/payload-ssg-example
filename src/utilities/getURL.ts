@@ -24,10 +24,3 @@ export const getClientSideURL = () => {
 
   return process.env.NEXT_PUBLIC_SERVER_URL || ''
 }
-
-export const getMediaURL = (url?: string | null) => {
-  if (!url) return ''
-  if (/^https?:\/\//.test(url)) return url
-
-  return `${getServerSideURL()}${url.startsWith('/') ? url : `/${url}`}`
-}

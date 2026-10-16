@@ -10,5 +10,14 @@ export const MediaBlock: Block = {
       relationTo: 'media',
       required: true,
     },
+    {
+      name: 'position',
+      type: 'select',
+      defaultValue: 'default',
+      options: [
+        { label: 'Default', value: 'default' },
+        { label: 'Fullscreen', value: 'fullscreen' },
+      ],
+    },
   ],
 }

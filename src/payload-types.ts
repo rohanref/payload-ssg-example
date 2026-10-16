@@ -349,6 +349,7 @@ export interface ContentBlock {
   columns?:
     | {
         size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+        columnType?: ('richText' | 'media') | null;
         richText?: {
           root: {
             type: string;
@@ -364,33 +365,54 @@ export interface ContentBlock {
           };
           [k: string]: unknown;
         } | null;
-        enableLink?: boolean | null;
-        link?: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-          /**
-           * Choose how the link should be rendered.
-           */
-          appearance?: ('default' | 'outline') | null;
-        };
+        media?: (number | null) | Media;
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: number | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: number | Post;
+                    } | null);
+                url?: string | null;
+                label: string;
+                /**
+                 * Choose how the link should be rendered.
+                 */
+                appearance?: ('default' | 'outline') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
       }[]
     | null;
   /**
-   * Optional: enter a max-width for this column (e.g., 1100px). If set, column will be centered. Only works for single columns
+   * Optional: enter a max-width for this block (e.g., 1100px). If set, content will be centered. Only works for single columns
    */
   maxWidth?: string | null;
+  /**
+   * Top padding in pixels
+   */
+  paddingTop?: number | null;
+  /**
+   * Bottom padding in pixels
+   */
+  paddingBottom?: number | null;
+  /**
+   * Any valid CSS color value (e.g., #ffffff, rgb(0,0,0), transparent)
+   */
+  backgroundColor?: string | null;
+  /**
+   * Any valid CSS color value (e.g., #333333)
+   */
+  textColor?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'content';
@@ -401,6 +423,7 @@ export interface ContentBlock {
  */
 export interface MediaBlock {
   media: number | Media;
+  position?: ('default' | 'fullscreen') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -728,21 +751,31 @@ export interface ContentBlockSelect<T extends boolean = true> {
     | T
     | {
         size?: T;
+        columnType?: T;
         richText?: T;
-        enableLink?: T;
-        link?:
+        media?: T;
+        links?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-              appearance?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              id?: T;
             };
         id?: T;
       };
   maxWidth?: T;
+  paddingTop?: T;
+  paddingBottom?: T;
+  backgroundColor?: T;
+  textColor?: T;
   id?: T;
   blockName?: T;
 }
@@ -752,6 +785,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
  */
 export interface MediaBlockSelect<T extends boolean = true> {
   media?: T;
+  position?: T;
   id?: T;
   blockName?: T;
 }

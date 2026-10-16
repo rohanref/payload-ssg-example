@@ -36,11 +36,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   } = props
 
   const href =
-    type === 'reference' &&
-    typeof reference?.value === 'object' &&
-    reference.value !== null &&
-    'slug' in reference.value &&
-    reference.value.slug
+    type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
           reference.value.slug
         }`
@@ -63,11 +59,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   if (secondaryLabel) {
     return (
-      <Link
-        className={cn('group', className)}
-        href={href || url || ''}
-        {...newTabProps}
-      >
+      <Link className={cn('group', className)} href={href || url || ''} {...newTabProps}>
         <span>{label}</span>
         <span className="max-sm:hidden mt-2 block text-base font-normal opacity-0 transition-opacity duration-600 group-hover:opacity-100">
           {secondaryLabel}
@@ -76,13 +68,26 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     )
   }
 
-
   return (
     <Button asChild className={className} size={size} variant={appearance}>
-      <Link className={cn('self-start cursor-pointer !shadow-lg !px-6 !py-4 !rounded-full !bg-white !text-black !text-base !mt-3 !h-auto', className)} href={href || url || ''} {...newTabProps}>
+      <Link
+        className={cn(
+          'self-start cursor-pointer !rounded-full !text-base',
+          // REMOVED SOME OF THESE: !shadow-lg !px-6 !py-4 !rounded-full !bg-white !text-base !mt-3 !h-auto
+          className,
+        )}
+        href={href || url || ''}
+        {...newTabProps}
+      >
         {label && label}
         {children && children}
-        <svg className="!w-[12px] inline-block ml-1 mt-[4px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+        {/* <svg
+          className="!w-[12px] inline-block ml-1 mt-[4px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
+        </svg> */}
       </Link>
     </Button>
   )

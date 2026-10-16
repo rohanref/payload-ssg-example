@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import { Users } from "./collections/Users";
-import { Posts } from "./collections/Posts";
+// import { Posts } from "./collections/Posts";
 import { Pages } from "./collections/Pages";
 import { Media } from "./collections/Media";
 
@@ -21,7 +21,7 @@ export default buildConfig({
         },
     },
     editor: lexicalEditor(),
-    collections: [Users, Posts, Pages, Media],
+    collections: [Users, Pages, Media],
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
         outputFile: path.resolve(dirname, "payload-types.ts"),

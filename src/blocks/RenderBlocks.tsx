@@ -4,34 +4,46 @@ import type { Page } from '@/payload-types'
 
 // import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
-import { ContentBlock } from '@/blocks/Content/Component'
+// import { ContentBlock } from '@/blocks/Content/Component'
 // import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
-// import { WorkBlock } from '@/blocks/WorkBlock/Component'
 // import { ClientListBlock } from '@/blocks/ClientListBlock/Component'
 // import { LatestNewsBlock } from '@/blocks/LatestNewsBlock/Component'
+// import { AllNewsBlock } from '@/blocks/AllNewsBlock/Component'
 // import { AboutBlock } from '@/blocks/AboutBlock/Component'
 // import { CapabilitiesBlock } from '@/blocks/CapabilitiesBlock/Component'
 // import { NewsBlock } from '@/blocks/NewsBlock/Component'
 // import { ContactBlock } from '@/blocks/ContactBlock/Component'
 import { VimeoBlock } from '@/blocks/VimeoBlock/Component'
 // import PayloadFormSimple from '@/blocks/PayloadFormSimple/Component'
+// import { GallerySliderBlock } from '@/blocks/GallerySliderBlock/Component'
+// import { HealthEngineBlock } from '@/blocks/HealthEngineBlock/Component'
+// import { SmileGalleryBlock } from '@/blocks/SmileGalleryBlock/Component'
+// import { SmileGalleryLight } from '@/blocks/SmileGalleryLight/ComponentClient'
+// import { CalloutBlock } from '@/blocks/CalloutBlock/Component'
+// import { MeetTheTeamImagesBlock } from '@/blocks/MeetTheTeamImagesBlock/Component'
 
 const blockComponents = {
   // archive: ArchiveBlock,
-  content: ContentBlock,
+  // content: ContentBlock,
   cta: CallToActionBlock,
   // formBlock: FormBlock,
   mediaBlock: MediaBlock,
-  // workBlock: WorkBlock,
   // clientListBlock: ClientListBlock,
   // latestNewsBlock: LatestNewsBlock,
+  // allNewsBlock: AllNewsBlock,
   // aboutBlock: AboutBlock,
   // capabilitiesBlock: CapabilitiesBlock,
   // newsBlock: NewsBlock,
   // contactBlock: ContactBlock,
   vimeoBlock: VimeoBlock,
   // payloadFormSimple: PayloadFormSimple,
+  // gallerySliderBlock: GallerySliderBlock,
+  // healthEngineBlock: HealthEngineBlock,
+  // smileGalleryBlock: SmileGalleryBlock,
+  // smileGalleryLight: SmileGalleryLight,
+  // calloutBlock: CalloutBlock,
+  // meetTheTeamImagesBlock: MeetTheTeamImagesBlock,
 }
 
 export const RenderBlocks: React.FC<{

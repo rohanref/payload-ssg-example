@@ -3,14 +3,15 @@ import { getServerSideURL } from './getURL'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'An open-source website built with Payload and Next.js.',
+  description:
+    'Dentists Melbourne CBD. General Dentistry, Cosmetic Dentistry and Dental Hygiene. Dentists Collins Street in the heart of the Melbourne CBD. Ph: 03 9650 2909',
   images: [
     {
-      url: `${getServerSideURL()}/website-template-OG.webp`,
+      url: `${getServerSideURL()}/website-template-og.jpg`,
     },
   ],
-  siteName: 'Payload Website Template',
-  title: 'Payload Website Template',
+  siteName: 'Dental Health Care Associates | Dentists Collins Street Melbourne',
+  title: 'Dental Health Care Associates | Dentists Collins Street Melbourne',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {

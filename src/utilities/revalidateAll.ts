@@ -5,9 +5,10 @@ export const WEBSITE_CACHE_TAGS = [
   'pages-sitemap',
   'news',
   'news-sitemap',
+  'global_footer',
+  'global_header',
+  'smile-gallery',
   'redirects',
-  'work-sitemap',
-  'work',
 ] as const
 
 export const revalidateWebsite = () => {
